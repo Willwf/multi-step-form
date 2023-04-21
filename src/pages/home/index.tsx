@@ -1,11 +1,12 @@
 import { Nav } from "../../components/nav";
+import { PersonalInfoForm } from "../../components/personal-info-form";
 import * as Styles from "./styles";
 
 export function Home() {
   return (
     <Styles.FormDiv>
       <Nav />
-      <Styles.Main></Styles.Main>
+      <PersonalInfoForm />
     </Styles.FormDiv>
   );
 }
