@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components"
+import * as Styles from "./variables"
 
 export const GlobalStyle = createGlobalStyle`
   :root {
@@ -10,5 +11,9 @@ export const GlobalStyle = createGlobalStyle`
       outline: 0;
       box-sizing: border-box;
       font-family: 'Ubuntu', sans-serif;
+  }
+
+  body {
+    background-color: ${Styles.magnolia}
   }
 `

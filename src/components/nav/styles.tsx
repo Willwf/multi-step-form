@@ -8,6 +8,8 @@ export const Nav = styled.nav`
   background-size: cover;
   height: 22vh;
   width: 100vw;
+
+  position: relative;
 `;
 
 export const StepsDiv = styled.div`

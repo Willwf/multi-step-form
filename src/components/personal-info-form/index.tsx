@@ -6,7 +6,7 @@ export function PersonalInfoForm() {
       <Styles.FormSection>
         <Styles.Form>
           <Styles.FormTitleDiv>
-            <Styles.FormTitle>Personal Info</Styles.FormTitle>
+            <Styles.FormTitle>Personal info</Styles.FormTitle>
             <Styles.FormSubtitle>
               Please provide your name, email address, and phone number.
             </Styles.FormSubtitle>
