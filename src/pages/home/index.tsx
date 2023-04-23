@@ -7,6 +7,9 @@ export function Home() {
     <Styles.FormDiv>
       <Nav />
       <PersonalInfoForm />
+      <Styles.NextButtonDiv>
+        <Styles.NextButton>Next Step</Styles.NextButton>
+      </Styles.NextButtonDiv>
     </Styles.FormDiv>
   );
 }

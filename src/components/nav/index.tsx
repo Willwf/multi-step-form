@@ -5,7 +5,7 @@ export function Nav() {
     <Styles.Nav>
       <Styles.StepsDiv>
         <Styles.StepDiv>
-          <Styles.NumberDiv>
+          <Styles.NumberDiv className="active">
             <Styles.Number>1</Styles.Number>
           </Styles.NumberDiv>
           <Styles.InfoDiv>
