@@ -16,7 +16,7 @@ export function Home() {
 
   return (
     <Styles.Form key={currentStep}>
-      <Nav />
+      <Nav currentStep={currentStep} />
       <Styles.FormSectionsDiv>
         <PersonalInfoForm
           className={`step ${currentStep === 1 ? "active" : ""}`}
