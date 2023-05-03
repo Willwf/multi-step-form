@@ -1,11 +1,17 @@
 import * as Styles from "./styles";
 
-export function Nav() {
+interface NavProps {
+  currentStep: number;
+}
+
+export function Nav(props: NavProps) {
+  const { currentStep } = props;
+
   return (
     <Styles.Nav>
       <Styles.StepsDiv>
         <Styles.StepDiv>
-          <Styles.NumberDiv className="active">
+          <Styles.NumberDiv className={currentStep === 1 ? "active" : ""}>
             <Styles.Number>1</Styles.Number>
           </Styles.NumberDiv>
           <Styles.InfoDiv>
@@ -15,7 +21,7 @@ export function Nav() {
         </Styles.StepDiv>
 
         <Styles.StepDiv>
-          <Styles.NumberDiv>
+          <Styles.NumberDiv className={currentStep === 2 ? "active" : ""}>
             <Styles.Number>2</Styles.Number>
           </Styles.NumberDiv>
           <Styles.InfoDiv>
@@ -25,7 +31,7 @@ export function Nav() {
         </Styles.StepDiv>
 
         <Styles.StepDiv>
-          <Styles.NumberDiv>
+          <Styles.NumberDiv className={currentStep === 3 ? "active" : ""}>
             <Styles.Number>3</Styles.Number>
           </Styles.NumberDiv>
           <Styles.InfoDiv>
@@ -35,7 +41,7 @@ export function Nav() {
         </Styles.StepDiv>
 
         <Styles.StepDiv>
-          <Styles.NumberDiv>
+          <Styles.NumberDiv className={currentStep === 4 ? "active" : ""}>
             <Styles.Number>4</Styles.Number>
           </Styles.NumberDiv>
           <Styles.InfoDiv>
