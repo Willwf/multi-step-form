@@ -6,13 +6,13 @@ import * as Styles from "./styles";
 
 export function Home() {
   const [currentStep, setCurrentStep] = useState<number>(1);
+  const [planOption, setPlanOption] = useState<string>("arcade");
+  const [isPaymentYearly, setIsPaymentYearly] = useState<boolean>(false);
 
   function updateCurrentStep(number: number) {
     // if (currentStep === 4) return;
     setCurrentStep(currentStep + number);
   }
-
-  console.log(currentStep);
 
   return (
     <Styles.Form key={currentStep}>
@@ -23,6 +23,10 @@ export function Home() {
         />
         <SelectYourPlan
           className={`step ${currentStep === 2 ? "active" : ""}`}
+          isPaymentYearly={isPaymentYearly}
+          setIsPaymentYearly={setIsPaymentYearly}
+          planOption={planOption}
+          setPlanOption={setPlanOption}
         />
       </Styles.FormSectionsDiv>
       <Styles.NextButtonDiv

@@ -3,20 +3,34 @@ import * as Styles from "./styles";
 import arcade from "../../assets/images/icon-arcade.svg";
 import advanced from "../../assets/images/icon-advanced.svg";
 import pro from "../../assets/images/icon-pro.svg";
-import { useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 interface SelectYourPlanProps {
   className: string;
+  isPaymentYearly: boolean;
+  setIsPaymentYearly: Dispatch<SetStateAction<boolean>>;
+  planOption: string;
+  setPlanOption: Dispatch<SetStateAction<string>>;
 }
 
 export function SelectYourPlan(props: SelectYourPlanProps) {
-  const { className } = props;
-
-  const [isPaymentYearly, setIsPaymentYearly] = useState(false);
+  const {
+    className,
+    isPaymentYearly,
+    setIsPaymentYearly,
+    planOption,
+    setPlanOption,
+  } = props;
 
   function switchToggle() {
     setIsPaymentYearly(!isPaymentYearly);
   }
+
+  function selectPlan(planOptionSelected: string) {
+    setPlanOption(planOptionSelected);
+  }
+
+  console.log(planOption);
 
   return (
     <Styles.FormSection className={className}>
@@ -27,27 +41,61 @@ export function SelectYourPlan(props: SelectYourPlanProps) {
             You have the option of monthly or yearly billing.
           </Styles.FormSubtitle>
         </Styles.FormTitleDiv>
-        <Styles.PlanOptionDiv className="selected">
+
+        <Styles.PlanOptionDiv
+          data-option={"arcade"}
+          className={planOption === "arcade" ? "selected" : ""}
+          onClick={() => selectPlan("arcade")}
+        >
           <img src={arcade} />
           <Styles.PlanOptionInfoDiv>
             <Styles.PlanOptionTitle>Arcade</Styles.PlanOptionTitle>
-            <Styles.PlanOptionPrice>$9/mo</Styles.PlanOptionPrice>
+            <Styles.PlanOptionPrice>
+              {isPaymentYearly ? "$90/yr" : "$9/mo"}
+            </Styles.PlanOptionPrice>
+            {isPaymentYearly ? (
+              <Styles.PlanOptionGift>2 months free</Styles.PlanOptionGift>
+            ) : (
+              ""
+            )}
           </Styles.PlanOptionInfoDiv>
         </Styles.PlanOptionDiv>
 
-        <Styles.PlanOptionDiv>
+        <Styles.PlanOptionDiv
+          data-option={"advanced"}
+          className={planOption === "advanced" ? "selected" : ""}
+          onClick={() => selectPlan("advanced")}
+        >
           <img src={advanced} />
           <Styles.PlanOptionInfoDiv>
             <Styles.PlanOptionTitle>Advanced</Styles.PlanOptionTitle>
-            <Styles.PlanOptionPrice>$12/mo</Styles.PlanOptionPrice>
+            <Styles.PlanOptionPrice>
+              {isPaymentYearly ? "$120/yr" : "$12/mo"}
+            </Styles.PlanOptionPrice>
+            {isPaymentYearly ? (
+              <Styles.PlanOptionGift>2 months free</Styles.PlanOptionGift>
+            ) : (
+              ""
+            )}
           </Styles.PlanOptionInfoDiv>
         </Styles.PlanOptionDiv>
 
-        <Styles.PlanOptionDiv>
+        <Styles.PlanOptionDiv
+          data-option={"pro"}
+          className={planOption === "pro" ? "selected" : ""}
+          onClick={() => selectPlan("pro")}
+        >
           <img src={pro} />
           <Styles.PlanOptionInfoDiv>
             <Styles.PlanOptionTitle>Pro</Styles.PlanOptionTitle>
-            <Styles.PlanOptionPrice>$15/mo</Styles.PlanOptionPrice>
+            <Styles.PlanOptionPrice>
+              {isPaymentYearly ? "$150/yr" : "$15/mo"}
+            </Styles.PlanOptionPrice>
+            {isPaymentYearly ? (
+              <Styles.PlanOptionGift>2 months free</Styles.PlanOptionGift>
+            ) : (
+              ""
+            )}
           </Styles.PlanOptionInfoDiv>
         </Styles.PlanOptionDiv>
 
