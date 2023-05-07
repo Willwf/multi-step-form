@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Nav } from "../../components/nav";
 import { PersonalInfoForm } from "../../components/personal-info-form";
 import { SelectYourPlan } from "../../components/select-your-plan-form";
+import { PickAddOns } from "../../components/pick-add-ons-form";
+
 import * as Styles from "./styles";
 
 export function Home() {
@@ -26,6 +28,11 @@ export function Home() {
           isPaymentYearly={isPaymentYearly}
           setIsPaymentYearly={setIsPaymentYearly}
           planOption={planOption}
+          setPlanOption={setPlanOption}
+        />
+        <PickAddOns
+          className={`step ${currentStep === 3 ? "active" : ""}`}
+          isPaymentYearly={isPaymentYearly}
           setPlanOption={setPlanOption}
         />
       </Styles.FormSectionsDiv>
