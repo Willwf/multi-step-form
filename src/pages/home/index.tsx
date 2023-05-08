@@ -10,6 +10,7 @@ export function Home() {
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [planOption, setPlanOption] = useState<string>("arcade");
   const [isPaymentYearly, setIsPaymentYearly] = useState<boolean>(false);
+  const [addonsSelected, setAddonsSelected] = useState<string[]>([]);
 
   function updateCurrentStep(number: number) {
     // if (currentStep === 4) return;
@@ -33,7 +34,8 @@ export function Home() {
         <PickAddOns
           className={`step ${currentStep === 3 ? "active" : ""}`}
           isPaymentYearly={isPaymentYearly}
-          setPlanOption={setPlanOption}
+          addonsSelected={addonsSelected}
+          setAddonsSelected={setAddonsSelected}
         />
       </Styles.FormSectionsDiv>
       <Styles.NextButtonDiv

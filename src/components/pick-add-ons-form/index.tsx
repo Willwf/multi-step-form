@@ -6,14 +6,27 @@ import { Dispatch, SetStateAction } from "react";
 interface PickAddOnsProps {
   className: string;
   isPaymentYearly: boolean;
-  setPlanOption: Dispatch<SetStateAction<string>>;
+  addonsSelected: string[];
+  setAddonsSelected: Dispatch<SetStateAction<string[]>>;
 }
 
 export function PickAddOns(props: PickAddOnsProps) {
-  const { className, isPaymentYearly, setPlanOption } = props;
+  const { className, isPaymentYearly, addonsSelected, setAddonsSelected } =
+    props;
 
-  function selectPlan(planOptionSelected: string) {
-    setPlanOption(planOptionSelected);
+  const addonsSelectedArray = [...addonsSelected];
+
+  function handleCheckboxClick(addonSelected: string) {
+    if (addonsSelectedArray.includes(addonSelected)) {
+      const index = addonsSelectedArray.indexOf(addonSelected);
+      if (index > -1) {
+        addonsSelectedArray.splice(index, 1);
+      }
+    } else {
+      addonsSelectedArray.push(addonSelected);
+    }
+
+    setAddonsSelected(addonsSelectedArray);
   }
 
   return (
@@ -27,11 +40,17 @@ export function PickAddOns(props: PickAddOnsProps) {
         </Styles.FormTitleDiv>
 
         <Styles.AddOnOptionDiv
-          className="selected"
-          onClick={() => selectPlan("arcade")}
+          className={
+            addonsSelectedArray.includes("Online service") ? "selected" : ""
+          }
+          onClick={() => handleCheckboxClick("Online service")}
         >
           <Styles.AddOnOptionTextsDiv>
-            <Styles.CheckboxInputDiv className="selected">
+            <Styles.CheckboxInputDiv
+              className={
+                addonsSelectedArray.includes("Online service") ? "selected" : ""
+              }
+            >
               <img src={checkmark} />
             </Styles.CheckboxInputDiv>
             <Styles.AddOnOptionInfoDiv>
@@ -46,9 +65,18 @@ export function PickAddOns(props: PickAddOnsProps) {
           </Styles.AddOnOptionPrice>
         </Styles.AddOnOptionDiv>
 
-        <Styles.AddOnOptionDiv onClick={() => selectPlan("advanced")}>
+        <Styles.AddOnOptionDiv
+          className={
+            addonsSelectedArray.includes("Larger storage") ? "selected" : ""
+          }
+          onClick={() => handleCheckboxClick("Larger storage")}
+        >
           <Styles.AddOnOptionTextsDiv>
-            <Styles.CheckboxInputDiv>
+            <Styles.CheckboxInputDiv
+              className={
+                addonsSelectedArray.includes("Larger storage") ? "selected" : ""
+              }
+            >
               <img src={checkmark} />
             </Styles.CheckboxInputDiv>
             <Styles.AddOnOptionInfoDiv>
@@ -63,9 +91,22 @@ export function PickAddOns(props: PickAddOnsProps) {
           </Styles.AddOnOptionPrice>
         </Styles.AddOnOptionDiv>
 
-        <Styles.AddOnOptionDiv onClick={() => selectPlan("pro")}>
+        <Styles.AddOnOptionDiv
+          className={
+            addonsSelectedArray.includes("Customizable profile")
+              ? "selected"
+              : ""
+          }
+          onClick={() => handleCheckboxClick("Customizable profile")}
+        >
           <Styles.AddOnOptionTextsDiv>
-            <Styles.CheckboxInputDiv>
+            <Styles.CheckboxInputDiv
+              className={
+                addonsSelectedArray.includes("Customizable profile")
+                  ? "selected"
+                  : ""
+              }
+            >
               <img src={checkmark} />
             </Styles.CheckboxInputDiv>
             <Styles.AddOnOptionInfoDiv>
