@@ -30,8 +30,6 @@ export function SelectYourPlan(props: SelectYourPlanProps) {
     setPlanOption(planOptionSelected);
   }
 
-  console.log(planOption);
-
   return (
     <Styles.FormSection className={className}>
       <Styles.FormSectionDiv>
@@ -43,7 +41,6 @@ export function SelectYourPlan(props: SelectYourPlanProps) {
         </Styles.FormTitleDiv>
 
         <Styles.PlanOptionDiv
-          data-option={"arcade"}
           className={planOption === "arcade" ? "selected" : ""}
           onClick={() => selectPlan("arcade")}
         >
@@ -62,7 +59,6 @@ export function SelectYourPlan(props: SelectYourPlanProps) {
         </Styles.PlanOptionDiv>
 
         <Styles.PlanOptionDiv
-          data-option={"advanced"}
           className={planOption === "advanced" ? "selected" : ""}
           onClick={() => selectPlan("advanced")}
         >
@@ -81,7 +77,6 @@ export function SelectYourPlan(props: SelectYourPlanProps) {
         </Styles.PlanOptionDiv>
 
         <Styles.PlanOptionDiv
-          data-option={"pro"}
           className={planOption === "pro" ? "selected" : ""}
           onClick={() => selectPlan("pro")}
         >

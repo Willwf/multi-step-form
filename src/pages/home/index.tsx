@@ -2,12 +2,15 @@ import { useState } from "react";
 import { Nav } from "../../components/nav";
 import { PersonalInfoForm } from "../../components/personal-info-form";
 import { SelectYourPlan } from "../../components/select-your-plan-form";
+import { PickAddOns } from "../../components/pick-add-ons-form";
+
 import * as Styles from "./styles";
 
 export function Home() {
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [planOption, setPlanOption] = useState<string>("arcade");
   const [isPaymentYearly, setIsPaymentYearly] = useState<boolean>(false);
+  const [addonsSelected, setAddonsSelected] = useState<string[]>([]);
 
   function updateCurrentStep(number: number) {
     // if (currentStep === 4) return;
@@ -27,6 +30,12 @@ export function Home() {
           setIsPaymentYearly={setIsPaymentYearly}
           planOption={planOption}
           setPlanOption={setPlanOption}
+        />
+        <PickAddOns
+          className={`step ${currentStep === 3 ? "active" : ""}`}
+          isPaymentYearly={isPaymentYearly}
+          addonsSelected={addonsSelected}
+          setAddonsSelected={setAddonsSelected}
         />
       </Styles.FormSectionsDiv>
       <Styles.NextButtonDiv
