@@ -1,11 +1,38 @@
+import { ChangeEvent, Dispatch, SetStateAction } from "react";
 import * as Styles from "./styles";
 
 interface PersonalInfoFormProps {
   className: string;
+  nameInput: string;
+  emailInput: string;
+  phoneInput: string;
+  setNameInput: Dispatch<SetStateAction<string>>;
+  setEmailInput: Dispatch<SetStateAction<string>>;
+  setPhoneInput: Dispatch<SetStateAction<string>>;
 }
 
 export function PersonalInfoForm(props: PersonalInfoFormProps) {
-  const { className } = props;
+  const {
+    className,
+    nameInput,
+    emailInput,
+    phoneInput,
+    setNameInput,
+    setEmailInput,
+    setPhoneInput,
+  } = props;
+
+  function handleNameInputChange(event: ChangeEvent<HTMLInputElement>) {
+    setNameInput(event.target.value);
+  }
+
+  function handleEmailInputChange(event: ChangeEvent<HTMLInputElement>) {
+    setEmailInput(event.target.value);
+  }
+
+  function handlePhoneInputChange(event: ChangeEvent<HTMLInputElement>) {
+    setPhoneInput(event.target.value);
+  }
 
   return (
     <Styles.FormSection className={className}>
@@ -25,6 +52,8 @@ export function PersonalInfoForm(props: PersonalInfoFormProps) {
               type="text"
               name="name"
               placeholder="e.g. Stephen King"
+              value={nameInput}
+              onChange={handleNameInputChange}
             />
           </fieldset>
 
@@ -35,6 +64,8 @@ export function PersonalInfoForm(props: PersonalInfoFormProps) {
               type="email"
               name="email"
               placeholder="e.g.stephenking@lorem.com"
+              value={emailInput}
+              onChange={handleEmailInputChange}
             />
           </fieldset>
 
@@ -45,6 +76,8 @@ export function PersonalInfoForm(props: PersonalInfoFormProps) {
               type="text"
               name="phone-number"
               placeholder="e.g. +1 234 567 890"
+              value={phoneInput}
+              onChange={handlePhoneInputChange}
             />
           </fieldset>
         </Styles.FormInputDiv>

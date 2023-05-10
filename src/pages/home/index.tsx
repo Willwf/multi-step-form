@@ -8,6 +8,9 @@ import * as Styles from "./styles";
 
 export function Home() {
   const [currentStep, setCurrentStep] = useState<number>(1);
+  const [nameInput, setNameInput] = useState<string>("");
+  const [emailInput, setEmailInput] = useState<string>("");
+  const [phoneInput, setPhoneInput] = useState<string>("");
   const [planOption, setPlanOption] = useState<string>("arcade");
   const [isPaymentYearly, setIsPaymentYearly] = useState<boolean>(false);
   const [addonsSelected, setAddonsSelected] = useState<string[]>([]);
@@ -23,6 +26,12 @@ export function Home() {
       <Styles.FormSectionsDiv>
         <PersonalInfoForm
           className={`step ${currentStep === 1 ? "active" : ""}`}
+          nameInput={nameInput}
+          emailInput={emailInput}
+          phoneInput={phoneInput}
+          setNameInput={setNameInput}
+          setEmailInput={setEmailInput}
+          setPhoneInput={setPhoneInput}
         />
         <SelectYourPlan
           className={`step ${currentStep === 2 ? "active" : ""}`}
