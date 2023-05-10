@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Nav } from "../../components/nav";
-import { PersonalInfoForm } from "../../components/personal-info-form";
-import { SelectYourPlan } from "../../components/select-your-plan-form";
-import { PickAddOns } from "../../components/pick-add-ons-form";
+import { PersonalInfoForm } from "../../components/personal-info-step";
+import { SelectYourPlan } from "../../components/select-your-plan-step";
+import { PickAddOns } from "../../components/pick-add-ons-step";
 
 import * as Styles from "./styles";
 
@@ -16,7 +16,8 @@ export function Home() {
   const [addonsSelected, setAddonsSelected] = useState<string[]>([]);
 
   function updateCurrentStep(number: number) {
-    // if (currentStep === 4) return;
+    if (currentStep === 4 && number === 1) return;
+
     setCurrentStep(currentStep + number);
   }
 
