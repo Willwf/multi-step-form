@@ -5,6 +5,7 @@ import { SelectYourPlan } from "../../components/select-your-plan-step";
 import { PickAddOns } from "../../components/pick-add-ons-step";
 
 import * as Styles from "./styles";
+import { FinishingUp } from "../../components/finishing-up-step";
 
 export function Home() {
   const [currentStep, setCurrentStep] = useState<number>(1);
@@ -46,6 +47,13 @@ export function Home() {
           isPaymentYearly={isPaymentYearly}
           addonsSelected={addonsSelected}
           setAddonsSelected={setAddonsSelected}
+        />
+        <FinishingUp
+          className={`step ${currentStep === 4 ? "active" : ""}`}
+          isPaymentYearly={isPaymentYearly}
+          setIsPaymentYearly={setIsPaymentYearly}
+          planOption={planOption}
+          setPlanOption={setPlanOption}
         />
       </Styles.FormSectionsDiv>
       <Styles.NextButtonDiv

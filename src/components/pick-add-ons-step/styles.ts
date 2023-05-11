@@ -44,7 +44,6 @@ export const AddOnOptionDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
   cursor: pointer;
 
   &:hover {
