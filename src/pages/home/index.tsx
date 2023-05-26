@@ -3,9 +3,10 @@ import { Nav } from "../../components/nav";
 import { PersonalInfoForm } from "../../components/personal-info-step";
 import { SelectYourPlan } from "../../components/select-your-plan-step";
 import { PickAddOns } from "../../components/pick-add-ons-step";
+import { FinishingUp } from "../../components/finishing-up-step";
+import { SkipButtonsElement } from "../../components/skip-buttons-element";
 
 import * as Styles from "./styles";
-import { FinishingUp } from "../../components/finishing-up-step";
 
 export function Home() {
   const [currentStep, setCurrentStep] = useState<number>(1);
@@ -15,12 +16,6 @@ export function Home() {
   const [planOption, setPlanOption] = useState<string>("arcade");
   const [isPaymentYearly, setIsPaymentYearly] = useState<boolean>(false);
   const [addonsSelected, setAddonsSelected] = useState<string[]>([]);
-
-  function updateCurrentStep(number: number) {
-    if (currentStep === 4 && number === 1) return;
-
-    setCurrentStep(currentStep + number);
-  }
 
   return (
     <Styles.Form key={currentStep}>
@@ -57,27 +52,11 @@ export function Home() {
           setCurrentStep={setCurrentStep}
         />
       </Styles.FormSectionsDiv>
-      <Styles.NextButtonDiv
-        className={currentStep > 1 ? "backButtonActive" : ""}
-      >
-        <Styles.BackButton
-          className={currentStep > 1 ? "active" : ""}
-          onClick={(event) => {
-            event.preventDefault();
-            updateCurrentStep(-1);
-          }}
-        >
-          Go Back
-        </Styles.BackButton>
-        <Styles.NextButton
-          onClick={(event) => {
-            event.preventDefault();
-            updateCurrentStep(1);
-          }}
-        >
-          Next Step
-        </Styles.NextButton>
-      </Styles.NextButtonDiv>
+
+      <SkipButtonsElement
+        currentStep={currentStep}
+        setCurrentStep={setCurrentStep}
+      />
     </Styles.Form>
   );
 }
