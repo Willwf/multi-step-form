@@ -70,6 +70,16 @@ export const PlanSelectedDiv = styled.div`
 
 `
 
+export const ChangePlanButton = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  color: ${Styles.coolGray};
+
+`
+
 export const AddonsSelectedDiv = styled.div`
   display: flex;
   flex-direction: column;

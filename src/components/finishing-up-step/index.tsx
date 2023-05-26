@@ -11,6 +11,7 @@ interface FinishingUpProps {
   setIsPaymentYearly: Dispatch<SetStateAction<boolean>>;
   planOption: string;
   setPlanOption: Dispatch<SetStateAction<string>>;
+  setCurrentStep: Dispatch<SetStateAction<number>>;
 }
 
 export function FinishingUp(props: FinishingUpProps) {
@@ -20,6 +21,7 @@ export function FinishingUp(props: FinishingUpProps) {
     setIsPaymentYearly,
     planOption,
     setPlanOption,
+    setCurrentStep,
   } = props;
 
   function switchToggle() {
@@ -28,6 +30,10 @@ export function FinishingUp(props: FinishingUpProps) {
 
   function selectPlan(planOptionSelected: string) {
     setPlanOption(planOptionSelected);
+  }
+
+  function handleChangeButton() {
+    setCurrentStep(2);
   }
 
   return (
@@ -43,9 +49,14 @@ export function FinishingUp(props: FinishingUpProps) {
         <Styles.PricingSummaryDiv>
           <Styles.SelectedOptionsDiv>
             <Styles.PlanSelectedDiv>
-              <Styles.SelectedPlanTitle>
-                Arcade (Monthly)
-              </Styles.SelectedPlanTitle>
+              <div>
+                <Styles.SelectedPlanTitle>
+                  Arcade (Monthly)
+                </Styles.SelectedPlanTitle>
+                <Styles.ChangePlanButton onClick={handleChangeButton}>
+                  Change
+                </Styles.ChangePlanButton>
+              </div>
               <Styles.SelectedPlanPrice>$9/mo</Styles.SelectedPlanPrice>
             </Styles.PlanSelectedDiv>
 

@@ -54,6 +54,7 @@ export function Home() {
           setIsPaymentYearly={setIsPaymentYearly}
           planOption={planOption}
           setPlanOption={setPlanOption}
+          setCurrentStep={setCurrentStep}
         />
       </Styles.FormSectionsDiv>
       <Styles.NextButtonDiv
