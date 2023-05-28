@@ -117,7 +117,7 @@ font-size: 1.3rem;
   color: ${Styles.marineBlue};
 `
 
-export const TotalPriceDiv = styled.p`
+export const TotalPriceDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -46,9 +46,8 @@ export function Home() {
         <FinishingUp
           className={`step ${currentStep === 4 ? "active" : ""}`}
           isPaymentYearly={isPaymentYearly}
-          setIsPaymentYearly={setIsPaymentYearly}
           planOption={planOption}
-          setPlanOption={setPlanOption}
+          addonsSelected={addonsSelected}
           setCurrentStep={setCurrentStep}
         />
       </Styles.FormSectionsDiv>
