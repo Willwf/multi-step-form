@@ -16,6 +16,7 @@ export function Home() {
   const [planOption, setPlanOption] = useState<string>("arcade");
   const [isPaymentYearly, setIsPaymentYearly] = useState<boolean>(false);
   const [addonsSelected, setAddonsSelected] = useState<string[]>([]);
+  const [emptyFields, setEmptyFields] = useState<string[]>([]);
 
   return (
     <Styles.Form key={currentStep}>
@@ -26,6 +27,7 @@ export function Home() {
           nameInput={nameInput}
           emailInput={emailInput}
           phoneInput={phoneInput}
+          emptyFields={emptyFields}
           setNameInput={setNameInput}
           setEmailInput={setEmailInput}
           setPhoneInput={setPhoneInput}
@@ -53,8 +55,12 @@ export function Home() {
       </Styles.FormSectionsDiv>
 
       <SkipButtonsElement
+        nameInput={nameInput}
+        emailInput={emailInput}
+        phoneInput={phoneInput}
         currentStep={currentStep}
         setCurrentStep={setCurrentStep}
+        setEmptyFields={setEmptyFields}
       />
     </Styles.Form>
   );

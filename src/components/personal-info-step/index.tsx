@@ -6,6 +6,7 @@ interface PersonalInfoFormProps {
   nameInput: string;
   emailInput: string;
   phoneInput: string;
+  emptyFields: string[];
   setNameInput: Dispatch<SetStateAction<string>>;
   setEmailInput: Dispatch<SetStateAction<string>>;
   setPhoneInput: Dispatch<SetStateAction<string>>;
@@ -17,6 +18,7 @@ export function PersonalInfoForm(props: PersonalInfoFormProps) {
     nameInput,
     emailInput,
     phoneInput,
+    emptyFields,
     setNameInput,
     setEmailInput,
     setPhoneInput,
@@ -46,7 +48,17 @@ export function PersonalInfoForm(props: PersonalInfoFormProps) {
 
         <Styles.FormInputDiv>
           <fieldset>
-            <Styles.Label htmlFor="name">Name</Styles.Label>
+            <div>
+              <Styles.Label htmlFor="name">Name</Styles.Label>
+              <Styles.errorLabel
+                htmlFor="name"
+                className={`${
+                  emptyFields.includes("name") ? "errorField" : ""
+                }`}
+              >
+                This field is required
+              </Styles.errorLabel>
+            </div>
             <Styles.Input
               id="name"
               type="text"
@@ -54,11 +66,22 @@ export function PersonalInfoForm(props: PersonalInfoFormProps) {
               placeholder="e.g. Stephen King"
               value={nameInput}
               onChange={handleNameInputChange}
+              className={`${emptyFields.includes("name") ? "errorField" : ""}`}
             />
           </fieldset>
 
           <fieldset>
-            <Styles.Label htmlFor="email">Email Address</Styles.Label>
+            <div>
+              <Styles.Label htmlFor="email">Email Address</Styles.Label>
+              <Styles.errorLabel
+                htmlFor="email"
+                className={`${
+                  emptyFields.includes("email") ? "errorField" : ""
+                }`}
+              >
+                This field is required
+              </Styles.errorLabel>
+            </div>
             <Styles.Input
               id="email"
               type="email"
@@ -66,11 +89,22 @@ export function PersonalInfoForm(props: PersonalInfoFormProps) {
               placeholder="e.g.stephenking@lorem.com"
               value={emailInput}
               onChange={handleEmailInputChange}
+              className={`${emptyFields.includes("email") ? "errorField" : ""}`}
             />
           </fieldset>
 
           <fieldset>
-            <Styles.Label htmlFor="phone-number">Phone Number</Styles.Label>
+            <div>
+              <Styles.Label htmlFor="phone-number">Phone Number</Styles.Label>
+              <Styles.errorLabel
+                htmlFor="phone-number"
+                className={`${
+                  emptyFields.includes("phone-number") ? "errorField" : ""
+                }`}
+              >
+                This field is required
+              </Styles.errorLabel>
+            </div>
             <Styles.Input
               id="phone-number"
               type="text"
@@ -78,6 +112,9 @@ export function PersonalInfoForm(props: PersonalInfoFormProps) {
               placeholder="e.g. +1 234 567 890"
               value={phoneInput}
               onChange={handlePhoneInputChange}
+              className={`${
+                emptyFields.includes("phone-number") ? "errorField" : ""
+              }`}
             />
           </fieldset>
         </Styles.FormInputDiv>

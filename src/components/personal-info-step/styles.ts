@@ -40,6 +40,11 @@ export const FormInputDiv = styled.div`
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 `;
 export const Label = styled.label`
@@ -47,15 +52,35 @@ export const Label = styled.label`
   color: ${Styles.marineBlue};
 `;
 
+export const errorLabel = styled.label`
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: ${Styles.strawberryRed};
+  display: none;
+
+  &.errorField {
+    display: block;
+  }
+`
+
 export const Input = styled.input`
   height: 5vh;
   padding: 0 1.5rem;
-  border: 1px solid rgb(150 153 171 / 50%);
+  border: 1px solid rgba(150 153 171 / 50%);
   border-radius: 0.3rem;
   font-size: 1.4rem;
+  font-weight: 500;
 
   &::placeholder {
     font-weight: 500;
     color: ${Styles.coolGray};
+  }
+
+  &:focus {
+    border-color: ${Styles.marineBlue}
+  }
+
+  &.errorField {
+    border-color: ${Styles.strawberryRed}
   }
 `;
