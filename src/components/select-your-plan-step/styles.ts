@@ -53,6 +53,10 @@ export const PlanOptionDiv = styled.div`
     border-color: ${Styles.marineBlue};
     background-color: ${Styles.alabaster};
   }
+
+  &:hover {
+    border-color: ${Styles.marineBlue};
+  }
 `;
 
 export const PlanOptionInfoDiv = styled.div`

@@ -76,6 +76,10 @@ export const Input = styled.input`
     color: ${Styles.coolGray};
   }
 
+  &:hover {
+    border-color: ${Styles.marineBlue}
+  }
+
   &:focus {
     border-color: ${Styles.marineBlue}
   }

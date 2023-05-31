@@ -78,6 +78,9 @@ export const ChangePlanButton = styled.button`
   text-decoration-thickness: 1.5px;
   color: ${Styles.coolGray};
 
+  &:hover {
+    color: ${Styles.purplishBlue}
+  }
 `
 
 export const AddonsSelectedDiv = styled.div`

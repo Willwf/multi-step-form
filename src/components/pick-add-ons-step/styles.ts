@@ -47,7 +47,7 @@ export const AddOnOptionDiv = styled.div`
   cursor: pointer;
 
   &:hover {
-    border-color: ${Styles.purplishBlue};
+    border-color: ${Styles.marineBlue};
   }
 
   &.selected {

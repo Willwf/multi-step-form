@@ -35,7 +35,7 @@ export const BackButton = styled.button`
   display: none;
 
   &:hover {
-    background-color: ${Styles.magnolia};
+    color: ${Styles.marineBlue};
   }
 
   &.active {
@@ -55,6 +55,10 @@ export const NextButton = styled.button`
 
   border-radius: 0.5rem;
   background-color: ${Styles.marineBlue};
+
+  &:hover {
+    opacity: 0.9;
+  }
 `;
 
 export const SubmitButton = styled.button`
@@ -69,4 +73,8 @@ export const SubmitButton = styled.button`
 
   border-radius: 0.5rem;
   background-color: ${Styles.purplishBlue};
+
+  &:hover {
+    opacity: 0.7;
+  }
 `
