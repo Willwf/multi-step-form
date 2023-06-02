@@ -75,6 +75,10 @@ export const Input = styled.input`
     font-weight: 500;
     color: ${Styles.coolGray};
   }
+  
+  &:invalid {
+    background-color: rgb(237 53 72 / 35%);
+  }
 
   &:hover {
     border-color: ${Styles.marineBlue}
