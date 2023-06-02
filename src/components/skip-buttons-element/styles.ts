@@ -16,6 +16,10 @@ export const NextButtonDiv = styled.div`
   &.backButtonActive {
     justify-content: space-between;
   }
+
+  &.hidden {
+    display: none;
+  }
 `;
 
 export const BackButton = styled.button`

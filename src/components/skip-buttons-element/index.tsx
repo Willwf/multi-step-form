@@ -3,6 +3,7 @@ import * as Styles from "./styles";
 import { Dispatch, SetStateAction } from "react";
 
 interface SkipButtonsProps {
+  isSubmitted: boolean;
   nameInput: string;
   emailInput: string;
   phoneInput: string;
@@ -13,6 +14,7 @@ interface SkipButtonsProps {
 
 export function SkipButtonsElement(props: SkipButtonsProps) {
   const {
+    isSubmitted,
     nameInput,
     emailInput,
     phoneInput,
@@ -56,7 +58,12 @@ export function SkipButtonsElement(props: SkipButtonsProps) {
   }
 
   return (
-    <Styles.NextButtonDiv className={currentStep > 1 ? "backButtonActive" : ""}>
+    <Styles.NextButtonDiv
+      className={`
+      ${currentStep > 1 ? "backButtonActive" : ""} ${
+        isSubmitted ? "hidden" : ""
+      }`}
+    >
       <Styles.BackButton
         className={currentStep > 1 ? "active" : ""}
         onClick={(event) => {
