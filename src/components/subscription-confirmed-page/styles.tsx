@@ -9,6 +9,12 @@ export const SubmittedDiv = styled.div`
   gap: 1.5rem;
 
   margin: 5rem 0;
+
+  @media (min-width: 65em) {
+    max-width: 40vw;
+
+    margin: 12rem 0;
+  }
 `;
 
 export const SubmittedIcon = styled.img`

@@ -9,23 +9,39 @@ export const FormSection = styled.section`
   &.step.active {
     display: block;
   }
+
+  @media (min-width: 65em) {
+    padding-bottom: 5rem;
+  }
 `;
 
 export const FormSectionDiv = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media (min-width: 65em) {
+    gap: 2rem;
+  }
 `;
 
 export const FormTitleDiv = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media (min-width: 65em) {
+    gap: 1.5rem;
+  }
 `;
 
 export const FormTitle = styled.h1`
   font-size: 2.4rem;
   color: ${Styles.marineBlue};
+
+  @media (min-width: 65em) {
+    font-size: 3rem;
+  }
 `;
 
 export const FormSubtitle = styled.p`
@@ -61,6 +77,11 @@ export const SelectedOptionsDiv = styled.div`
     width: 100%;
     height: .1px;
     background-color: ${Styles.lightGray};
+  }
+
+  @media (min-width: 65em) {
+    width: 40vw;
+    gap: 2rem;
   }
 `
 export const PlanSelectedDiv = styled.div`
@@ -101,6 +122,10 @@ export const SelectedPlanTitle = styled.p`
   letter-spacing: 0.01rem;
   font-weight: 700;
   color: ${Styles.marineBlue};
+
+  @media (min-width: 65em) {
+    font-size: 1.6rem;
+  }
 `
 
 export const SelectedPlanPrice = styled.p`
@@ -108,16 +133,28 @@ export const SelectedPlanPrice = styled.p`
   letter-spacing: -0.01rem;
   font-weight: 700;
   color: ${Styles.marineBlue};
+
+  @media (min-width: 65em) {
+    font-size: 1.6rem;
+  }
 `
 
 export const SelectedAddonTitle = styled.p`
   font-size: 1.3rem;
   color: ${Styles.coolGray};
+
+  @media (min-width: 65em) {
+    font-size: 1.6rem;
+  }
 `
 
 export const SelectedAddonPrice = styled.p`
-font-size: 1.3rem;
+  font-size: 1.3rem;
   color: ${Styles.marineBlue};
+
+  @media (min-width: 65em) {
+    font-size: 1.6rem;
+  }
 `
 
 export const TotalPriceDiv = styled.div`
@@ -131,10 +168,18 @@ export const TotalPriceDiv = styled.div`
 export const TotalPriceTitle = styled.p`
   font-size: 1.3rem;
   color: ${Styles.coolGray};
+
+  @media (min-width: 65em) {
+    font-size: 1.6rem;
+  }
 `
 
 export const TotalPrice = styled.p`
   font-size: 1.5rem;
   color: ${Styles.purplishBlue};
   font-weight: 700;
+
+  @media (min-width: 65em) {
+    font-size: 2rem;
+  }
 `

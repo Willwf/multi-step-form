@@ -61,7 +61,7 @@ export function PickAddOns(props: PickAddOnsProps) {
             </Styles.AddOnOptionInfoDiv>
           </Styles.AddOnOptionTextsDiv>
           <Styles.AddOnOptionPrice>
-            {isPaymentYearly ? "$10/yr" : "+$1/mo"}
+            {isPaymentYearly ? "+$10/yr" : "+$1/mo"}
           </Styles.AddOnOptionPrice>
         </Styles.AddOnOptionDiv>
 
@@ -87,7 +87,7 @@ export function PickAddOns(props: PickAddOnsProps) {
             </Styles.AddOnOptionInfoDiv>
           </Styles.AddOnOptionTextsDiv>
           <Styles.AddOnOptionPrice>
-            {isPaymentYearly ? "$20/yr" : "+$2/mo"}
+            {isPaymentYearly ? "+$20/yr" : "+$2/mo"}
           </Styles.AddOnOptionPrice>
         </Styles.AddOnOptionDiv>
 
@@ -119,7 +119,7 @@ export function PickAddOns(props: PickAddOnsProps) {
             </Styles.AddOnOptionInfoDiv>
           </Styles.AddOnOptionTextsDiv>
           <Styles.AddOnOptionPrice>
-            {isPaymentYearly ? "$20/yr" : "+$2/mo"}
+            {isPaymentYearly ? "+$20/yr" : "+$2/mo"}
           </Styles.AddOnOptionPrice>
         </Styles.AddOnOptionDiv>
       </Styles.FormSectionDiv>

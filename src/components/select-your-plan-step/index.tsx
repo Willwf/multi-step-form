@@ -40,58 +40,60 @@ export function SelectYourPlan(props: SelectYourPlanProps) {
           </Styles.FormSubtitle>
         </Styles.FormTitleDiv>
 
-        <Styles.PlanOptionDiv
-          className={planOption === "arcade" ? "selected" : ""}
-          onClick={() => selectPlan("arcade")}
-        >
-          <img src={arcade} />
-          <Styles.PlanOptionInfoDiv>
-            <Styles.PlanOptionTitle>Arcade</Styles.PlanOptionTitle>
-            <Styles.PlanOptionPrice>
-              {isPaymentYearly ? "$90/yr" : "$9/mo"}
-            </Styles.PlanOptionPrice>
-            {isPaymentYearly ? (
-              <Styles.PlanOptionGift>2 months free</Styles.PlanOptionGift>
-            ) : (
-              ""
-            )}
-          </Styles.PlanOptionInfoDiv>
-        </Styles.PlanOptionDiv>
+        <Styles.PlanOptionDiv>
+          <Styles.PlanOptionElement
+            className={planOption === "arcade" ? "selected" : ""}
+            onClick={() => selectPlan("arcade")}
+          >
+            <img src={arcade} />
+            <Styles.PlanOptionInfoDiv>
+              <Styles.PlanOptionTitle>Arcade</Styles.PlanOptionTitle>
+              <Styles.PlanOptionPrice>
+                {isPaymentYearly ? "$90/yr" : "$9/mo"}
+              </Styles.PlanOptionPrice>
+              {isPaymentYearly ? (
+                <Styles.PlanOptionGift>2 months free</Styles.PlanOptionGift>
+              ) : (
+                ""
+              )}
+            </Styles.PlanOptionInfoDiv>
+          </Styles.PlanOptionElement>
 
-        <Styles.PlanOptionDiv
-          className={planOption === "advanced" ? "selected" : ""}
-          onClick={() => selectPlan("advanced")}
-        >
-          <img src={advanced} />
-          <Styles.PlanOptionInfoDiv>
-            <Styles.PlanOptionTitle>Advanced</Styles.PlanOptionTitle>
-            <Styles.PlanOptionPrice>
-              {isPaymentYearly ? "$120/yr" : "$12/mo"}
-            </Styles.PlanOptionPrice>
-            {isPaymentYearly ? (
-              <Styles.PlanOptionGift>2 months free</Styles.PlanOptionGift>
-            ) : (
-              ""
-            )}
-          </Styles.PlanOptionInfoDiv>
-        </Styles.PlanOptionDiv>
+          <Styles.PlanOptionElement
+            className={planOption === "advanced" ? "selected" : ""}
+            onClick={() => selectPlan("advanced")}
+          >
+            <img src={advanced} />
+            <Styles.PlanOptionInfoDiv>
+              <Styles.PlanOptionTitle>Advanced</Styles.PlanOptionTitle>
+              <Styles.PlanOptionPrice>
+                {isPaymentYearly ? "$120/yr" : "$12/mo"}
+              </Styles.PlanOptionPrice>
+              {isPaymentYearly ? (
+                <Styles.PlanOptionGift>2 months free</Styles.PlanOptionGift>
+              ) : (
+                ""
+              )}
+            </Styles.PlanOptionInfoDiv>
+          </Styles.PlanOptionElement>
 
-        <Styles.PlanOptionDiv
-          className={planOption === "pro" ? "selected" : ""}
-          onClick={() => selectPlan("pro")}
-        >
-          <img src={pro} />
-          <Styles.PlanOptionInfoDiv>
-            <Styles.PlanOptionTitle>Pro</Styles.PlanOptionTitle>
-            <Styles.PlanOptionPrice>
-              {isPaymentYearly ? "$150/yr" : "$15/mo"}
-            </Styles.PlanOptionPrice>
-            {isPaymentYearly ? (
-              <Styles.PlanOptionGift>2 months free</Styles.PlanOptionGift>
-            ) : (
-              ""
-            )}
-          </Styles.PlanOptionInfoDiv>
+          <Styles.PlanOptionElement
+            className={planOption === "pro" ? "selected" : ""}
+            onClick={() => selectPlan("pro")}
+          >
+            <img src={pro} />
+            <Styles.PlanOptionInfoDiv>
+              <Styles.PlanOptionTitle>Pro</Styles.PlanOptionTitle>
+              <Styles.PlanOptionPrice>
+                {isPaymentYearly ? "$150/yr" : "$15/mo"}
+              </Styles.PlanOptionPrice>
+              {isPaymentYearly ? (
+                <Styles.PlanOptionGift>2 months free</Styles.PlanOptionGift>
+              ) : (
+                ""
+              )}
+            </Styles.PlanOptionInfoDiv>
+          </Styles.PlanOptionElement>
         </Styles.PlanOptionDiv>
 
         <Styles.PlanToggleDiv>

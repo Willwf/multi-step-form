@@ -9,12 +9,20 @@ export const FormSection = styled.section`
   &.step.active {
     display: block;
   }
+
+  @media (min-width: 65em) {
+    padding-bottom: 5rem;
+  }
 `;
 
 export const FormSectionDiv = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media (min-width: 65em) {
+    gap: 3rem;
+  }
 `;
 
 export const FormTitleDiv = styled.div`
@@ -36,6 +44,16 @@ export const FormSubtitle = styled.p`
 `;
 
 export const PlanOptionDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media (min-width: 65em) {
+    flex-direction: row;
+  }
+`
+
+export const PlanOptionElement = styled.div`
   border: 1px solid ${Styles.lightGray};
   border-radius: 0.7rem;
 
@@ -57,6 +75,20 @@ export const PlanOptionDiv = styled.div`
   &:hover {
     border-color: ${Styles.marineBlue};
   }
+
+  @media (min-width: 65em) {
+
+    width: 14rem;
+    height: 16rem;
+
+    flex-direction: column;
+    justify-content: space-between;
+
+    & img {
+      width: 4rem;
+    }
+  }
+
 `;
 
 export const PlanOptionInfoDiv = styled.div`

@@ -17,8 +17,8 @@ export const Nav = styled.nav`
 
     border-radius: 1rem;
 
-    height: 60vh;
-    width: 25vw;
+    height: initial;
+    width: initial;
   }
 `;
 
@@ -30,9 +30,22 @@ export const StepsDiv = styled.div`
   gap: 1.5rem;
 
   padding-top: 3rem;
+
+  @media (min-width: 65em) {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 3rem;
+
+    padding: 3rem 6rem 0 2rem;
+  }
 `;
 
-export const StepDiv = styled.div``;
+export const StepDiv = styled.div`
+  @media (min-width: 65em) {
+    display: flex;
+    gap: 1.5rem;
+  }
+`;
 
 export const NumberDiv = styled.div`
   display: flex;
@@ -58,12 +71,33 @@ export const Number = styled.p`
 
 export const InfoDiv = styled.div`
   display: none;
+
+  @media (min-width: 65em) {
+    display: block;
+  }
 `;
 
 export const StepInfo = styled.p`
   display: none;
+
+  @media (min-width: 65em) {
+    display: block;
+
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: ${Styles.lightGray};
+  }
 `;
 
 export const StepTitle = styled.h2`
   display: none;
+
+  @media (min-width: 65em) {
+    display: block;
+
+    letter-spacing: 0.1rem;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: ${Styles.magnolia};
+  }
 `;

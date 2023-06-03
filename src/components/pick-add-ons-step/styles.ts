@@ -9,12 +9,20 @@ export const FormSection = styled.section`
   &.step.active {
     display: block;
   }
+
+  @media (min-width: 65em) {
+    padding-bottom: 5rem;
+  }
 `;
 
 export const FormSectionDiv = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media (min-width: 65em) {
+    gap: 2rem;
+  }
 `;
 
 export const FormTitleDiv = styled.div`
@@ -103,4 +111,9 @@ export const AddOnOptionSubtitle = styled.p`
 export const AddOnOptionPrice = styled.p`
   color: ${Styles.purplishBlue};
   font-size: 1.1rem;
+
+  @media (min-width: 65em) {
+    font-size: 1.3rem;
+
+  }
 `;
