@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import * as Styles from "../../styles/variables";
 import bgNavMobile from "../../assets/images/bg-sidebar-mobile.svg";
+import bgNavDesktop from "../../assets/images/bg-sidebar-desktop.svg";
 
 export const Nav = styled.nav`
   background-image: url(${bgNavMobile});
@@ -10,6 +11,15 @@ export const Nav = styled.nav`
   width: 100vw;
 
   position: relative;
+
+  @media (min-width: 65em) {
+    background-image: url(${bgNavDesktop});
+
+    border-radius: 1rem;
+
+    height: 60vh;
+    width: 25vw;
+  }
 `;
 
 export const StepsDiv = styled.div`

@@ -16,4 +16,14 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${Styles.magnolia}
   }
+
+  #root {
+    @media (min-width: 65em) {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 `

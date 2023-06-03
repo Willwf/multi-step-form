@@ -58,7 +58,7 @@ export function SkipButtonsElement(props: SkipButtonsProps) {
   }
 
   return (
-    <Styles.NextButtonDiv
+    <Styles.ButtonsDiv
       className={`
       ${currentStep > 1 ? "backButtonActive" : ""} ${
         isSubmitted ? "hidden" : ""
@@ -85,6 +85,6 @@ export function SkipButtonsElement(props: SkipButtonsProps) {
           Next Step
         </Styles.NextButton>
       )}
-    </Styles.NextButtonDiv>
+    </Styles.ButtonsDiv>
   );
 }

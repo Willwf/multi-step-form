@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import * as Styles from "../../styles/variables";
 
-export const NextButtonDiv = styled.div`
+export const ButtonsDiv = styled.div`
   width: 100vw;
   min-height: 10vh;
   background-color: ${Styles.white};
@@ -19,6 +19,15 @@ export const NextButtonDiv = styled.div`
 
   &.hidden {
     display: none;
+  }
+
+  @media (min-width: 65em) {
+    position: static;
+
+    padding: 1rem 8rem;
+
+    width: 100%;
+    min-height: initial;
   }
 `;
 
@@ -45,6 +54,15 @@ export const BackButton = styled.button`
   &.active {
     display: inline;
   }
+
+  @media (min-width: 65em) {
+    width: 12vw;
+    border-radius: 1rem;
+
+    font-size: 1.6rem;
+
+    margin-left: initial;
+  }
 `;
 
 export const NextButton = styled.button`
@@ -63,6 +81,15 @@ export const NextButton = styled.button`
   &:hover {
     opacity: 0.9;
   }
+
+  @media (min-width: 65em) {
+    width: 12vw;
+    border-radius: 1rem;
+
+    font-size: 1.6rem;
+
+    margin-right: initial;
+  }
 `;
 
 export const SubmitButton = styled.button`
@@ -80,5 +107,14 @@ export const SubmitButton = styled.button`
 
   &:hover {
     opacity: 0.7;
+  }
+
+  @media (min-width: 65em) {
+    width: 12vw;
+    border-radius: 1rem;
+
+    font-size: 1.6rem;
+
+    margin-right: initial;
   }
 `

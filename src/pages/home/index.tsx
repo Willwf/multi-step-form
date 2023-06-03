@@ -31,54 +31,56 @@ export function Home() {
     <Styles.Form onSubmit={handleSubmit} key={currentStep}>
       <Nav currentStep={currentStep} />
 
-      {isSubmitted ? (
-        <Styles.FormSectionsDiv>
-          <SubscriptionConfirmedPage />
-        </Styles.FormSectionsDiv>
-      ) : (
-        <Styles.FormSectionsDiv>
-          <PersonalInfoForm
-            className={`step ${currentStep === 1 ? "active" : ""}`}
-            nameInput={nameInput}
-            emailInput={emailInput}
-            phoneInput={phoneInput}
-            emptyFields={emptyFields}
-            setNameInput={setNameInput}
-            setEmailInput={setEmailInput}
-            setPhoneInput={setPhoneInput}
-          />
-          <SelectYourPlan
-            className={`step ${currentStep === 2 ? "active" : ""}`}
-            isPaymentYearly={isPaymentYearly}
-            setIsPaymentYearly={setIsPaymentYearly}
-            planOption={planOption}
-            setPlanOption={setPlanOption}
-          />
-          <PickAddOns
-            className={`step ${currentStep === 3 ? "active" : ""}`}
-            isPaymentYearly={isPaymentYearly}
-            addonsSelected={addonsSelected}
-            setAddonsSelected={setAddonsSelected}
-          />
-          <FinishingUp
-            className={`step ${currentStep === 4 ? "active" : ""}`}
-            isPaymentYearly={isPaymentYearly}
-            planOption={planOption}
-            addonsSelected={addonsSelected}
-            setCurrentStep={setCurrentStep}
-          />
-        </Styles.FormSectionsDiv>
-      )}
+      <div className="formContent">
+        {isSubmitted ? (
+          <Styles.FormSectionsDiv>
+            <SubscriptionConfirmedPage />
+          </Styles.FormSectionsDiv>
+        ) : (
+          <Styles.FormSectionsDiv>
+            <PersonalInfoForm
+              className={`step ${currentStep === 1 ? "active" : ""}`}
+              nameInput={nameInput}
+              emailInput={emailInput}
+              phoneInput={phoneInput}
+              emptyFields={emptyFields}
+              setNameInput={setNameInput}
+              setEmailInput={setEmailInput}
+              setPhoneInput={setPhoneInput}
+            />
+            <SelectYourPlan
+              className={`step ${currentStep === 2 ? "active" : ""}`}
+              isPaymentYearly={isPaymentYearly}
+              setIsPaymentYearly={setIsPaymentYearly}
+              planOption={planOption}
+              setPlanOption={setPlanOption}
+            />
+            <PickAddOns
+              className={`step ${currentStep === 3 ? "active" : ""}`}
+              isPaymentYearly={isPaymentYearly}
+              addonsSelected={addonsSelected}
+              setAddonsSelected={setAddonsSelected}
+            />
+            <FinishingUp
+              className={`step ${currentStep === 4 ? "active" : ""}`}
+              isPaymentYearly={isPaymentYearly}
+              planOption={planOption}
+              addonsSelected={addonsSelected}
+              setCurrentStep={setCurrentStep}
+            />
+          </Styles.FormSectionsDiv>
+        )}
 
-      <SkipButtonsElement
-        isSubmitted={isSubmitted}
-        nameInput={nameInput}
-        emailInput={emailInput}
-        phoneInput={phoneInput}
-        currentStep={currentStep}
-        setCurrentStep={setCurrentStep}
-        setEmptyFields={setEmptyFields}
-      />
+        <SkipButtonsElement
+          isSubmitted={isSubmitted}
+          nameInput={nameInput}
+          emailInput={emailInput}
+          phoneInput={phoneInput}
+          currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
+          setEmptyFields={setEmptyFields}
+        />
+      </div>
     </Styles.Form>
   );
 }

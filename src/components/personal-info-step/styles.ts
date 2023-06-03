@@ -21,6 +21,10 @@ export const FormTitleDiv = styled.div`
 export const FormTitle = styled.h1`
   font-size: 2.4rem;
   color: ${Styles.marineBlue};
+
+  @media (min-width: 65em) {
+    font-size: 3rem;
+  }
 `;
 export const FormSubtitle = styled.p`
   font-size: 1.6rem;
@@ -50,6 +54,10 @@ export const FormInputDiv = styled.div`
 export const Label = styled.label`
   font-size: 1.2rem;
   color: ${Styles.marineBlue};
+
+  @media (min-width: 65em) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const errorLabel = styled.label`
@@ -60,6 +68,10 @@ export const errorLabel = styled.label`
 
   &.errorField {
     display: block;
+  }
+
+  @media (min-width: 65em) {
+    font-size: 1.5rem;
   }
 `
 
@@ -90,5 +102,10 @@ export const Input = styled.input`
 
   &.errorField {
     border-color: ${Styles.strawberryRed}
+  }
+
+  @media (min-width: 65em) {
+    border-radius: 1rem;
+    font-size: 1.6rem;
   }
 `;

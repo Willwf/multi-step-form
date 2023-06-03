@@ -1,7 +1,22 @@
 import styled from "styled-components";
 import * as Styles from "../../styles/variables";
 
-export const Form = styled.form``;
+export const Form = styled.form`
+  @media (min-width: 65em) {
+    display: flex;
+
+    padding: 1rem;
+    border-radius: 1rem;
+
+    background-color: ${Styles.white};
+
+    .formContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+`;
 
 export const FormSectionsDiv = styled.div`
   width: 90vw;
@@ -18,4 +33,15 @@ export const FormSectionsDiv = styled.div`
   padding: 3rem 2rem;
   border-radius: 1rem;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+
+  @media (min-width: 65em) {
+    position: static;
+
+    height: initial;
+    width: initial;
+
+    padding: 3rem 8rem;
+    border-radius: 0;
+    box-shadow: none;
+  }
 `;
